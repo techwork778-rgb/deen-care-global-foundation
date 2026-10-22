@@ -1,0 +1,4 @@
+import { PageFrame, SectionHeading } from '@/components/site-shell'
+import { faqs } from '@/lib/site-data'
+export const metadata={title:'FAQ | DEEN Care Global Foundation',description:'Answers to common questions about requesting assistance.'}
+export default function FAQ(){return <PageFrame crumbs={[{label:'FAQ'}]}><main><section className="page-hero"><div className="shell"><p className="eyebrow">Questions, answered</p><h1>Clarity is part of care.</h1><p>Here are answers to the questions we hear most often about assistance, privacy, and our direct-support model.</p></div></section><section className="section"><div className="shell"><SectionHeading title="Frequently asked questions"/><div className="faq-list">{faqs.map(([q,a])=><details key={q}><summary>{q}</summary><p>{a}</p></details>)}</div></div></section></main></PageFrame>}

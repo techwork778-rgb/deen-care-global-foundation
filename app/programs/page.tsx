@@ -1,0 +1,6 @@
+import Link from 'next/link'
+import { ArrowUpRight } from 'lucide-react'
+import { PageFrame, SectionHeading } from '@/components/site-shell'
+import { programs } from '@/lib/site-data'
+export const metadata={title:'Programs | DEEN Care Global Foundation',description:'Explore direct assistance programs from DEEN Care Global Foundation.'}
+export default function Programs(){return <PageFrame crumbs={[{label:'Programs'}]}><main><section className="page-hero"><div className="shell"><p className="eyebrow">Our programs</p><h1>Support shaped around real needs.</h1><p>Our programs reflect the practical ways a person or family may need support. Every request is considered individually.</p></div></section><section className="section light-section"><div className="shell"><SectionHeading title="Ways we may be able to help" text="Select a program to learn more about who it is for and the support it can include."/><div className="program-grid">{programs.map((p,i)=><Link className="program-card" href={`/programs/${p.slug}`} key={p.slug}><span className="card-number">0{i+1}</span><h3>{p.title}</h3><p>{p.short}</p><span className="card-arrow"><ArrowUpRight size={18}/></span></Link>)}</div></div></section></main></PageFrame>}
