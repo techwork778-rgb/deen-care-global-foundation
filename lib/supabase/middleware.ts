@@ -1,5 +1,6 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
+import { getPublicOrigin } from './public-origin'
 import { supabasePublicKey } from './public-key'
 
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL?.trim().toLowerCase()
@@ -56,8 +57,7 @@ export async function updateSession(request: NextRequest) {
       if (path.startsWith('/api/')) {
         return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
       }
-      const url = request.nextUrl.clone()
-      url.pathname = '/login'
+      const url = new URL('/login', getPublicOrigin(request))
       url.searchParams.set('callbackUrl', path)
       return NextResponse.redirect(url)
     }
