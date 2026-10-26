@@ -193,7 +193,7 @@ export default async function AdminPage({
             STAT CARDS
         ==================================================== */}
 
-        <section className="mb-7 grid grid-cols-2 gap-3 lg:grid-cols-4">
+        <section className="mb-7 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
 
           <StatCard
             label="Total Requests"
@@ -334,14 +334,17 @@ export default async function AdminPage({
                DATA TABLE
             ================================================== */
 
-            <div className="overflow-x-auto">
+            <p className="border-b border-[#111111]/10 px-5 py-2.5 text-[11px] font-medium text-[#666666] md:hidden">
+              Swipe sideways to see every column.
+            </p>
+            <div className="admin-table-scroll">
 
               <table className="w-full min-w-[1080px] border-collapse text-left">
 
                 <thead>
                   <tr className="border-b border-[#111111]/10 bg-[#FAFAF8]">
 
-                    <Th>
+                    <Th className="admin-sticky-col">
                       Request ID
                     </Th>
 
@@ -385,7 +388,7 @@ export default async function AdminPage({
                           REQUEST ID
                       ==================================== */}
 
-                      <Td>
+                      <Td className="admin-sticky-col">
 
                         <div className="flex items-center gap-3">
 
@@ -512,7 +515,7 @@ export default async function AdminPage({
 
                         <Link
                           href={`/admin/${r.referenceId}`}
-                          className="inline-flex items-center gap-2 rounded-lg border border-[#111111]/10 bg-white px-3 py-2 text-[10px] font-bold uppercase tracking-[0.08em] text-[#222222] shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition-all duration-150 hover:border-[#C59D3D]/50 hover:bg-[#FBF8F0] hover:text-[#8C6723]"
+                          className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-[#111111]/10 bg-white px-3 py-2 text-[10px] font-bold uppercase tracking-[0.08em] text-[#222222] shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition-all duration-150 hover:border-[#C59D3D]/50 hover:bg-[#FBF8F0] hover:text-[#8C6723] md:min-h-0"
                         >
                           View request
 
@@ -609,7 +612,7 @@ function StatCard({
 
       <div className="mb-5 flex items-start justify-between">
 
-        <span className="text-[9px] font-bold uppercase tracking-[0.15em] text-[#444444]">
+        <span className="min-w-0 pr-2 text-[9px] font-bold uppercase leading-tight tracking-[0.12em] text-[#444444] sm:tracking-[0.15em]">
           {label}
         </span>
 

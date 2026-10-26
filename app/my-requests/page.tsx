@@ -44,8 +44,8 @@ export default async function MyRequests() {
                 {rows.map((r) => (
                   <div key={r.id} className="form-card" style={{ padding: 20 }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 16, flexWrap: 'wrap' }}>
-                      <div>
-                        <div style={{ fontFamily: 'monospace', color: '#6b7280', fontSize: 13 }}>{r.referenceId}</div>
+                      <div style={{ minWidth: 0, maxWidth: '100%' }}>
+                        <div style={{ fontFamily: 'monospace', color: '#6b7280', fontSize: 13, overflowWrap: 'anywhere' }}>{r.referenceId}</div>
                         <h3 style={{ margin: '6px 0 4px' }}>{r.assistanceType}</h3>
                         <p style={{ color: '#6b7280', fontSize: 14, margin: 0 }}>
                           Submitted {r.createdAt.toLocaleString()}
@@ -63,7 +63,7 @@ export default async function MyRequests() {
                         {statusLabel(r.status)}
                       </span>
                     </div>
-                    <p style={{ marginTop: 14, whiteSpace: 'pre-wrap' }}>{r.description}</p>
+                    <p style={{ marginTop: 14, whiteSpace: 'pre-wrap', overflowWrap: 'anywhere' }}>{r.description}</p>
                   </div>
                 ))}
               </div>

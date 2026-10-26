@@ -55,11 +55,11 @@ export default async function AdminRequestDetail({
             BACK NAVIGATION
         ==================================================== */}
 
-        <div className="mb-6 flex items-center justify-between gap-4">
+        <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
 
           <Link
             href="/admin"
-            className="group inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.12em] text-[#555555] transition-colors duration-150 hover:text-[#8C6723]"
+            className="group inline-flex min-h-11 items-center gap-2 text-[10px] font-bold uppercase tracking-[0.12em] text-[#555555] transition-colors duration-150 hover:text-[#8C6723] md:min-h-0"
           >
             <span className="transition-transform duration-150 group-hover:-translate-x-0.5">
               <BackIcon />
@@ -69,7 +69,7 @@ export default async function AdminRequestDetail({
           </Link>
 
           <Link href="/" aria-label="DEEN Care Global Foundation" className="inline-flex shrink-0">
-            <Logo className="h-14 w-auto" />
+            <Logo className="h-12 w-auto sm:h-14" />
           </Link>
 
         </div>

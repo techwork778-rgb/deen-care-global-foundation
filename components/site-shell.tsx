@@ -13,6 +13,15 @@ import { Logo } from '@/components/logo'
 
 const ease = [0.22, 1, 0.36, 1] as const
 
+const mobileLinks = [
+  ['/', 'Home'],
+  ['/about', 'About'],
+  ['/how-we-help', 'How we help'],
+  ['/transparency', 'Transparency'],
+  ['/faq', 'FAQ'],
+  ['/contact', 'Contact'],
+] as const
+
 export function Header() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
@@ -20,6 +29,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false)
   useEffect(() => { const onScroll = () => setScrolled(window.scrollY > 40); onScroll(); window.addEventListener('scroll', onScroll, { passive: true }); return () => window.removeEventListener('scroll', onScroll) }, [])
   useEffect(() => { document.body.style.overflow = open ? 'hidden' : ''; return () => { document.body.style.overflow = '' } }, [open])
+  useEffect(() => { setOpen(false); setProgramsOpen(false) }, [pathname])
   const active = (href: string) => pathname === href
   return <header className={`floating-header ${scrolled ? 'is-scrolled' : ''}`}>
     <div className="floating-nav">
@@ -36,7 +46,7 @@ export function Header() {
       </nav>
       <button className="mobile-menu-toggle" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button>
     </div>
-    <AnimatePresence>{open && <motion.div className="mobile-menu" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}><div className="mobile-menu-inner"><div className="mobile-links">{['/about','/how-we-help','/transparency','/faq','/contact'].map((href, i) => <motion.div key={href} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * .06 }}><Link href={href} onClick={() => setOpen(false)}>{href.slice(1).replaceAll('-', ' ')}</Link></motion.div>)}<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .18 }}><button className="mobile-program-toggle" onClick={() => setProgramsOpen(!programsOpen)} aria-expanded={programsOpen}>Programs <ChevronDown /></button>{programsOpen && <div className="mobile-programs">{navPrograms.map(p => <Link key={p.slug} href={`/programs/${p.slug}`} onClick={() => setOpen(false)}>{p.title}</Link>)}</div>}</motion.div></div><Link href="/get-help" className="button button-light mobile-cta" onClick={() => setOpen(false)}>Request assistance <ArrowUpRight size={17} /></Link><div className="mobile-user-nav"><UserNav /></div></div></motion.div>}</AnimatePresence>
+    <AnimatePresence>{open && <motion.div className="mobile-menu" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}><div className="mobile-menu-inner"><div className="mobile-links">{mobileLinks.map(([href, label], i) => <motion.div key={href} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * .04 }}><Link href={href} onClick={() => setOpen(false)}>{label}</Link></motion.div>)}<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .2 }}><button type="button" className="mobile-program-toggle" onClick={() => setProgramsOpen(!programsOpen)} aria-expanded={programsOpen}>Programs <ChevronDown /></button>{programsOpen && <div className="mobile-programs">{navPrograms.map(p => <Link key={p.slug} href={`/programs/${p.slug}`} onClick={() => setOpen(false)}>{p.title}</Link>)}<Link href="/programs" onClick={() => setOpen(false)}>All programs</Link></div>}</motion.div></div><Link href="/get-help" className="button button-light mobile-cta" onClick={() => setOpen(false)}>Request assistance <ArrowUpRight size={17} /></Link><div className="mobile-user-nav"><UserNav /></div></div></motion.div>}</AnimatePresence>
   </header>
 }
 

@@ -88,14 +88,14 @@ export function HelpRequestForm({ defaults }: { defaults?: Defaults }) {
           <input id="website" name="website" tabIndex={-1} autoComplete="off" />
         </div>
        {/* Consent Checkbox */}
-<div className="sm:col-span-2 pt-2">
+<div className="field full min-w-0 pt-2">
   <label className="flex items-start gap-3 cursor-pointer">
     <input
       type="checkbox"
       name="consent"
       value="true"
       required
-      className="mt-1 w-4 h-4 rounded border-black bg-black text-black focus:ring-black focus:ring-offset-0"
+      className="mt-1 h-5 w-5 shrink-0 rounded border-black bg-black text-black focus:ring-black focus:ring-offset-0 sm:h-4 sm:w-4"
     />
 
     <span className="text-xs leading-relaxed text-black">

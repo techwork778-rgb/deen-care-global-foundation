@@ -77,13 +77,13 @@ export default async function GetHelp() {
                   </div>
 
                   {user?.email && (
-                    <div className="pt-4 border-t border-slate-100 dark:border-zinc-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
-                      <span>
+                    <div className="pt-4 border-t border-slate-100 dark:border-zinc-800/80 flex flex-col items-start gap-3 text-xs text-slate-500 dark:text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+                      <span className="min-w-0 break-all">
                         Signed in as <strong className="font-semibold text-slate-800 dark:text-slate-200">{user.email}</strong>
                       </span>
                       <Link 
                         href="/my-requests" 
-                        className="font-medium text-emerald-600 dark:text-emerald-400 hover:underline transition-all"
+                        className="inline-flex min-h-11 shrink-0 items-center font-medium text-emerald-600 dark:text-emerald-400 hover:underline transition-all sm:min-h-0"
                       >
                         View my requests &rarr;
                       </Link>
