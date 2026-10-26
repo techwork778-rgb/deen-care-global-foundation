@@ -334,6 +334,7 @@ export default async function AdminPage({
                DATA TABLE
             ================================================== */
 
+            <>
             <p className="border-b border-[#111111]/10 px-5 py-2.5 text-[11px] font-medium text-[#666666] md:hidden">
               Swipe sideways to see every column.
             </p>
@@ -533,6 +534,7 @@ export default async function AdminPage({
               </table>
 
             </div>
+            </>
 
           )}
 
