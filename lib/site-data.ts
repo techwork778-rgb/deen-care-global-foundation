@@ -1,21 +1,43 @@
 export type Program = { slug: string; title: string; short: string; description: string; support: string[]; audience: string }
 
 export const programs: Program[] = [
-  { slug: 'education-support', title: 'Education support', short: 'Creating room to learn, grow, and choose a different future.', description: 'Direct assistance for learners whose circumstances make education difficult to access or continue.', audience: 'Students, learners, and families facing barriers to education.', support: ['School fees and learning materials', 'Transport and essential study needs', 'Short-term support to stay enrolled'], },
-  { slug: 'medical-healthcare-assistance', title: 'Medical & healthcare assistance', short: 'Helping people access essential care with dignity.', description: 'Support for urgent and essential healthcare needs when cost is preventing someone from receiving care.', audience: 'People and families managing urgent or essential medical needs.', support: ['Treatment and consultation costs', 'Medication and recovery essentials', 'Travel for necessary care'], },
-{
-  slug: 'childrens-orphanage',
-  title: "Children's Orphanage",
-  short: 'Providing care, shelter, and support for orphaned children.',
-  description: 'A safe and nurturing environment offering essential care, education, and support for children without parental care.',
-  audience: 'Orphaned and vulnerable children in need of care and protection.',
-  support: ['Safe shelter and accommodation', 'Food, clothing, and education', 'Healthcare and emotional support'],
-},  { slug: 'child-support', title: 'Child support', short: 'Protecting the wellbeing and potential of children.', description: 'Focused support that helps children stay safe, healthy, and connected to care and education.', audience: 'Children and the trusted adults responsible for their care.', support: ['Education and care essentials', 'Health and safety needs', 'Family stabilisation support'], },
-  { slug: 'emergency-assistance', title: 'Emergency assistance', short: 'A calm, practical response when circumstances change suddenly.', description: 'Direct assistance for immediate needs following an emergency, displacement, or unexpected crisis.', audience: 'Individuals and families facing an urgent, time-sensitive need.', support: ['Emergency shelter and essentials', 'Immediate travel and safety needs', 'Short-term crisis support'], },
-  { slug: 'food-and-essentials', title: 'Food & essentials', short: 'Meeting the essentials that make daily life possible.', description: 'Direct help with food, hygiene, and other basic necessities when they are not accessible.', audience: 'People and families without reliable access to daily essentials.', support: ['Food and household supplies', 'Hygiene and care items', 'Essential clothing and supplies'], },
-  { slug: 'vulnerable-individuals-and-families', title: 'Vulnerable individuals & families', short: 'Standing alongside people who face compounding barriers.', description: 'Holistic assistance for people whose circumstances make it harder to access support elsewhere.', audience: 'People experiencing vulnerability, isolation, displacement, or exclusion.', support: ['Needs-based direct assistance', 'Connection to local services', 'Essential stabilisation support'], },
-  { slug: 'humanitarian-initiatives', title: 'Humanitarian initiatives', short: 'Responding thoughtfully to needs across communities.', description: 'Carefully reviewed initiatives that address clear humanitarian needs directly and responsibly.', audience: 'Communities experiencing a defined humanitarian need.', support: ['Essential relief initiatives', 'Community-led response', 'Time-bound humanitarian action'], },
-]
+  {
+    slug: 'education-support',
+    title: 'Education support',
+    short: 'Creating room to learn, grow, and choose a different future.',
+    description: 'Direct assistance for learners whose circumstances make education difficult to access or continue.',
+    audience: 'Students, learners, and families facing barriers to education.',
+    support: [
+      'School fees and learning materials',
+      'Transport and essential study needs',
+      'Short-term support to stay enrolled',
+    ],
+  },
+  {
+    slug: 'medical-healthcare-assistance',
+    title: 'Medical & healthcare assistance',
+    short: 'Helping people access essential care with dignity.',
+    description: 'Support for urgent and essential healthcare needs when cost is preventing someone from receiving care.',
+    audience: 'People and families managing urgent or essential medical needs.',
+    support: [
+      'Treatment and consultation costs',
+      'Medication and recovery essentials',
+      'Travel for necessary care',
+    ],
+  },
+  {
+    slug: 'childrens-orphanage',
+    title: "Children's Orphanage",
+    short: 'Providing care, shelter, and support for orphaned children.',
+    description: 'A safe and nurturing environment offering essential care, education, and support for children without parental care.',
+    audience: 'Orphaned and vulnerable children in need of care and protection.',
+    support: [
+      'Safe shelter and accommodation',
+      'Food, clothing, and education',
+      'Healthcare and emotional support',
+    ],
+  },
+];
 
 export const faqs = [
   ['Do you accept donations?', 'No. DEEN Care Global Foundation does not accept donations through this website or from the public. We directly provide assistance to people who are genuinely in need.'],

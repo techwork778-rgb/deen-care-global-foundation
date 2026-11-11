@@ -570,3 +570,73 @@ html { overflow-x: clip; }
   .process-bar div:last-child { border-bottom: 0; }
 }
 
+/* Section Spacing */
+.section-subtitle {
+  margin-top: 40px;
+}
+
+/* Compact Leadership Card */
+.leadership-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e9e5df;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  align-self: start;
+}
+
+.leadership-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid #e9e5df;
+}
+
+.leadership-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.leadership-details .eyebrow {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #756b5e;
+  margin: 0 0 4px 0;
+}
+
+.leadership-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 2px 0;
+  line-height: 1.2;
+}
+
+.leadership-title {
+  font-size: 13px;
+  color: #777777;
+  margin: 0;
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 480px) {
+  .leadership-card {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .leadership-avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .leadership-name {
+    font-size: 18px;
+  }
+}
