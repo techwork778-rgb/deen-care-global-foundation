@@ -1,43 +1,55 @@
 export type Program = { slug: string; title: string; short: string; description: string; support: string[]; audience: string }
 
+
 export const programs: Program[] = [
   {
     slug: 'education-support',
-    title: 'Education support',
-    short: 'Creating room to learn, grow, and choose a different future.',
-    description: 'Direct assistance for learners whose circumstances make education difficult to access or continue.',
-    audience: 'Students, learners, and families facing barriers to education.',
+    title: 'Education Support',
+    short:
+      'Creating opportunities through education and empowering brighter futures.',
+    description:
+      'Every individual deserves the opportunity to learn, grow, and achieve their potential. Our Education Support program helps children and young learners overcome financial and social barriers to education, ensuring that difficult circumstances do not stand in the way of their dreams.',
+    audience:
+      'Underprivileged students, children from low-income families, and young learners facing barriers to quality education.',
     support: [
-      'School fees and learning materials',
-      'Transport and essential study needs',
-      'Short-term support to stay enrolled',
-    ],
-  },
-  {
-    slug: 'medical-healthcare-assistance',
-    title: 'Medical & healthcare assistance',
-    short: 'Helping people access essential care with dignity.',
-    description: 'Support for urgent and essential healthcare needs when cost is preventing someone from receiving care.',
-    audience: 'People and families managing urgent or essential medical needs.',
-    support: [
-      'Treatment and consultation costs',
-      'Medication and recovery essentials',
-      'Travel for necessary care',
+      'School fees, uniforms, books, and essential learning materials',
+      'Educational assistance for children from disadvantaged backgrounds',
+      'Support to help students continue their education and pursue their aspirations',
     ],
   },
   {
     slug: 'childrens-orphanage',
     title: "Children's Orphanage",
-    short: 'Providing care, shelter, and support for orphaned children.',
-    description: 'A safe and nurturing environment offering essential care, education, and support for children without parental care.',
-    audience: 'Orphaned and vulnerable children in need of care and protection.',
+    short:
+      'Providing a safe haven where every child feels valued, protected, and loved.',
+    description:
+      'Every child deserves a place to feel safe, supported, and cared for. Our Children’s Orphanage program focuses on supporting orphaned and vulnerable children through safe living environments, essential care, education, and emotional guidance. We strive to create opportunities for children to grow with confidence, discover their potential, and move toward a future filled with dignity, stability, and hope.',
+    audience:
+      'Orphaned, abandoned, and vulnerable children who require safe shelter, compassionate care, educational opportunities, and long-term support.',
     support: [
-      'Safe shelter and accommodation',
-      'Food, clothing, and education',
-      'Healthcare and emotional support',
+      'Safe shelter, nutritious meals, clothing, and essential daily care',
+      'Access to education, healthcare, and emotional wellbeing support',
+      'A nurturing environment that encourages personal growth, confidence, and independence',
     ],
   },
+  {
+    slug: 'child-support',
+    title: 'Child Support',
+    short:
+      'Every child deserves love, protection, and the opportunity to thrive.',
+    description:
+      'Every child deserves a childhood filled with safety, care, dignity, and hope. Our Child Support program is dedicated to uplifting vulnerable and underprivileged children by addressing their essential needs, supporting their emotional and physical wellbeing, and helping them build a foundation for a brighter future. We believe that supporting a child today can transform a life tomorrow.',
+    audience:
+      'Vulnerable children, children from financially struggling families, and young individuals facing neglect, hardship, or limited access to essential care and opportunities.',
+    support: [
+      'Essential nutrition, clothing, hygiene, and everyday necessities',
+      'Access to healthcare, emotional wellbeing, and child protection support',
+      'Educational resources, personal development, and opportunities for a better future',
+    ],
+  },
+  
 ];
+
 
 export const faqs = [
   ['Do you accept donations?', 'No. DEEN Care Global Foundation does not accept donations through this website or from the public. We directly provide assistance to people who are genuinely in need.'],
